@@ -1013,8 +1013,8 @@ flex-direction: column;
     gap: 12px;
 }
 .gallery-wrap img {
-    width: 130px !important;
-    height: 150px !important;
+    width: 130px!important;
+    height: 150px!important;
 }
 .for-parents-wrap,
 .our-lessons-wrap {
