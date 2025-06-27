@@ -34,7 +34,7 @@ body {
     list-style-type: none;
     word-break: break-all;
   }
-  
+
   :root{
     --yellow: #FFDD57;
     --ogange: #ffae57;
@@ -844,7 +844,7 @@ border-radius: 30px;
 .offer-warning{
   border: 3px solid #f87b7b;
   padding: 30px;
-  margin: 10px;
+  margin: 30px 10px;
   border-radius: 20px;
 }
 .download-btn {
@@ -887,9 +887,7 @@ border-radius: 30px;
 
 
   @media (max-width: 1200px){
-    .footer-logo-menu-wrap{
-      justify-content: center;
-    }
+
   }
   
 
@@ -902,6 +900,9 @@ footer{
 
 
   @media (max-width: 768px) {
+  .footer-logo-menu-wrap{
+      justify-content: center;
+  }
 .header-wrap{
   flex-direction: column;
   align-items: center;
@@ -1017,11 +1018,18 @@ justify-content: center;
 flex-wrap: wrap;
   }
 }
+
+
+
   @media (max-width: 628px){
 .slogan-wrap{
 flex-direction: column;
 }
+.offer-wrap h2{
+  font-size: 22px;}
   }
+
+
 
   @media (max-width: 500px) {
     .contact-list li {
@@ -1029,6 +1037,8 @@ flex-direction: column;
       gap: 6px;
     }
   } 
+
+
 
   @media (max-width: 480px) {
     .slogan-wrap p {
@@ -1058,6 +1068,9 @@ flex-direction: column;
 }
 
   }
+
+
+
   @media (max-width: 375px){
     .for-parents-img {
       width: 200px;
@@ -1066,5 +1079,8 @@ flex-direction: column;
   } 
   .offer-wrap p, .offer-wrap ul {
     font-size: 16px;
+  }
+  .header-logo span, .footer-logo span{
+    font-size: 28px;
   }
   } 
