@@ -38,7 +38,7 @@
                 <img src="./img/2.jpg" alt="imgKids">
                 <img src="./img/3.jpg" alt="imgKids">
             </div>
-            <div class="main-text">
+            <div class="main-text fade-in">
                 <p>Творчість, що розвиває: малюємо, відчуваємо, зростаємо!
                 </p>
                 <p>Магія піску в маленьких долоньках!
@@ -55,16 +55,16 @@
 
     <section class="anim-section padding-wrap">
         <div class="anim-wrap margin-wrap">
-            <h2>Пісочна анімація – чарівний світ творчості для дітей!
+            <h2 class="fade-in">Пісочна анімація – чарівний світ творчості для дітей!
             </h2>
-            <p>Пісочна анімація – це не просто малювання, а <span>особливий метод розвитку</span> , який поєднує творчість, сенсорну гру та психологічне розвантаження. Дітки занурюються у світ фантазії, створюючи дивовижні картини піском, що оживають прямо на їхніх очах!
+            <p class="fade-in">Пісочна анімація – це не просто малювання, а <span>особливий метод розвитку</span> , який поєднує творчість, сенсорну гру та психологічне розвантаження. Дітки занурюються у світ фантазії, створюючи дивовижні картини піском, що оживають прямо на їхніх очах!
             </p>
         </div>
     </section>
 
     <section class="benefits-section padding-wrap">
         <div class="benefits-wrap margin-wrap" >
-            <div class="benefits-item">
+            <div class="benefits-item fade-in">
                 <h3>Наші заняття:</h3>
                 <p><span class="checkmark">✔</span> Навчають концентрувати увагу</p>
                 <p><span class="checkmark">✔</span> Розвивають дрібну моторику</p>
@@ -72,7 +72,7 @@
                 <p><span class="checkmark">✔</span> Вчать самовираженню та впевненості у собі</p>
                 <p><span class="checkmark">✔</span> Дарують радість творчості та відкриттів</p>
             </div>
-            <div class="benefits-item">
+            <div class="benefits-item fade-in ">
                 <h3>Для кого?</h3>
                 <p><img src="./img/kids-Photoroom.png" alt="kidsImg">Запрошуємо дітей від 2 до 10 років у чарівний світ пісочної анімації!
                 </p>
@@ -96,7 +96,7 @@
             <h2>Наші заняття
             </h2>
             <h3>Що дають уроки пісочної анімації?</h3>
-            <div class="our-lessons-list">
+            <div class="our-lessons-list fade-in">
             <p><span>⭐</span>Розвиток моторики – дитячі пальчики стають спритнішими, а м’язи рук – сильнішими
             </p>
             <p><span>⭐</span>Формування уяви та креативного мислення
@@ -115,19 +115,27 @@
 
     <section class="gallery-section padding-wrap">
         <div class="gallery-wrap margin-wrap">
-            <img src="./img/4.jpg" alt="imgKids">
-            <img src="./img/12.jpeg" alt="imgKids">
-            <img src="./img/6.jpg" alt="imgKids">
-            <img src="./img/7.jpg" alt="imgKids">
+          <img src="./img/4.jpg" alt="img1" class="gallery-img">
+          <img src="./img/12.jpeg" alt="img2" class="gallery-img">
+          <img src="./img/6.jpg" alt="img3" class="gallery-img">
+          <img src="./img/7.jpg" alt="img4" class="gallery-img">
         </div>
     </section>
+      
+    <div class="modal" id="modal">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <button class="arrow-btn left" id="prevBtn">&#10094;</button>
+        <img class="modal-content" id="modalImage" alt="Зображення">
+        <button class="arrow-btn right" id="nextBtn">&#10095;</button>
+    </div>
+    
 
     <section id="for-parents" class="for-parents-section padding-wrap">
         <div class="for-parents-wrap margin-wrap">
             <h2>Для батьків</h2>
             <h3>Як підтримати дитину у творчому розвитку?</h3>
             <div class="for-parents-img-wrap">
-            <div class="for-parents-items">
+            <div class="for-parents-items fade-in">
                 <p>
                     Не оцінюйте роботи дитини, а радійте разом з нею
                 </p>
@@ -192,6 +200,7 @@
            
             <p class="made-footer">Made with ❤️  by <a href="https://www.linkedin.com/in/anna-yeremenko-nik/" target="_blank">Anna Yeremenko</a></p>
     </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
           const items = document.querySelectorAll('.registration-item');
@@ -212,6 +221,87 @@
           });
         });
       </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImage");
+      const closeBtn = document.getElementById("closeModal");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const images = document.querySelectorAll(".gallery-img");
+
+      let currentIndex = 0;
+
+      function showImage(index) {
+        modalImg.src = images[index].src;
+        modal.style.display = "flex";
+      }
+
+      images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+          currentIndex = index;
+          showImage(currentIndex);
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+
+      nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (modal.style.display === "flex") {
+          if (e.key === "ArrowRight") {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+          } else if (e.key === "ArrowLeft") {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+          } else if (e.key === "Escape") {
+            modal.style.display = "none";
+          }
+        }
+      });
+    });
+  </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const fadeElems = document.querySelectorAll('.fade-in');
+  
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Якщо одноразова анімація
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+  
+      fadeElems.forEach(el => observer.observe(el));
+    });
+  </script>
+
       
 
     
