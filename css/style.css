@@ -30,7 +30,10 @@ body {
   h1, h2, h3 {
     font-weight: 700;
   }
-  
+  li{
+    list-style-type: none;
+    word-break: break-all;
+  }
   :root{
     --yellow: #FFDD57;
     --ogange: #ffae57;
@@ -739,6 +742,10 @@ border-radius: 30px;
   line-height: 1.6;
 }
 
+.offer-date{
+  display: flex;
+  justify-content: space-between;
+}
 .offer-wrap ul {
   padding-left: 20px;
   list-style-type: disc;
@@ -833,6 +840,28 @@ border-radius: 30px;
   text-decoration: underline;
 }
 
+.offer-warning{
+  border: 3px solid #f87b7b;
+  padding: 30px;
+  margin: 10px;
+  border-radius: 20px;
+}
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.download-btn:hover {
+  background: #0056b3;
+}
+
+
+
 
   @media screen and (min-width: 320px) {
     .margin-wrap{
@@ -885,9 +914,10 @@ footer{
   align-items: center;
 }
     .main-img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 7/5;
+      flex: 0 0 auto;
+      width: 320px;
+      height: 300px;
+      aspect-ratio: 7 / 5;
       }
       .main-text p {
         font-size: 1rem;
@@ -1033,4 +1063,7 @@ flex-direction: column;
       height: auto;
       margin: 20px 0;
   } 
+  .offer-wrap p, .offer-wrap ul {
+    font-size: 16px;
+  }
   } 
