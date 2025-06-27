@@ -920,7 +920,7 @@ border-radius: 30px;
 
 .fade-in {
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateY(50px);
   transition: opacity 4s ease, transform 4s ease;
 }
 
