@@ -922,6 +922,7 @@ border-radius: 30px;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 4s ease, transform 4s ease;
+  will-change: opacity, transform;
 }
 
 .fade-in.visible {

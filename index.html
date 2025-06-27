@@ -284,22 +284,22 @@
   </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const fadeElems = document.querySelectorAll('.fade-in');
-  
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Якщо одноразова анімація
-          }
-        });
-      }, {
-        threshold: 0.1
-      });
-  
-      fadeElems.forEach(el => observer.observe(el));
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeElems = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // прибирає повторну анімацію
+      }
     });
+  }, {
+    threshold: 0.1
+  });
+
+  fadeElems.forEach(el => observer.observe(el));
+});
   </script>
 
       
